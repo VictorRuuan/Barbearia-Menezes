@@ -1,0 +1,23 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="home">
+
+    <img src="{% static 'img/studio menezes.jpg' %}" class="logo">
+
+    <h1>STUDIO<br>MENEZES</h1>
+
+    <p class="slogan">Estilo e precisão em cada corte</p>
+
+    <div class="btn-group">
+        <a href="{% url 'dados' %}" class="btn-primary">✂️ Criar Agendamento</a>
+        <a href="#" class="btn-secondary">👤 Meu Perfil</a>
+    </div>
+
+    <a class="admin">Área Administrativa</a>
+
+</section>
+
+{% endblock %}

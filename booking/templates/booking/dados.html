@@ -1,0 +1,20 @@
+{% extends 'booking/base.html' %}
+{% block content %}
+<section class="container">
+    <div class="form-box">
+    <h2>Seus Dados</h2>
+    <p>Informe seus dados para o agendamento</p>
+
+    <form action="{% url 'dados' %}" method="post">
+        {% csrf_token %}
+        <label>Nome Completo</label>
+        <input type="text" name="nome" placeholder="Seu nome" required>
+
+        <label>Telefone</label>
+        <input type="text" name="telefone" placeholder="(00) 00000-0000" required>
+
+        <button class="btn-primary" type="submit">Continuar</button>
+    </form>
+    </div>
+</section>
+{% endblock %}

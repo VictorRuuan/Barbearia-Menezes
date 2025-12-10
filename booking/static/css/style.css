@@ -1,0 +1,274 @@
+/* ===== ESTILO GERAL ===== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #001f3f, #003d7a);
+    color: #fff;
+}
+
+/* ============================= */
+/* ===== PÁGINA PRINCIPAL ===== */
+/* ============================= */
+
+.home {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #001f3f, #003d7a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.home .logo {
+    width: 220px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.home h1 {
+    font-size: 40px;
+    margin: 10px 0;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.slogan {
+    font-size: 15px;
+    opacity: 0.9;
+    margin-bottom: 35px;
+}
+
+/* Botões Home */
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.btn-primary {
+    background: #1A5BFF;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.1);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+}
+
+.admin {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 25px;
+}
+
+
+/* =================================== */
+/* ===== PÁGINAS INTERNAS (GERAL) ===== */
+/* =================================== */
+
+.container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Barra de progresso */
+
+.steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.step {
+    width: 35px;
+    height: 35px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step.active {
+    background: #1A5BFF;
+}
+
+.bar {
+    width: 40px;
+    height: 4px;
+    background: #444;
+}
+
+/* ============================= */
+/* ===== 1. SEUS DADOS ===== */
+/* ============================= */
+
+.form-box {
+    background: #0d1b2a;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.3);
+    margin: 0 auto 25px auto;
+}
+
+.form-box h2 {
+    margin-bottom: 10px;
+}
+
+.form-box p {
+    opacity: .8;
+    margin-bottom: 20px;
+}
+
+.form-box label {
+    text-align: left;
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 16px;
+}
+
+.form-box input {
+    width: 95%;
+    padding: 14px;
+    border-radius: 10px;
+    background: #112233;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+.form-box input:focus {
+    border: 2px solid #1A5BFF;
+}
+
+.form-box button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+
+/* ============================= */
+/* ===== 2. SERVIÇOS ===== */
+/* ============================= */
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.service {
+    background: #0d1b2a;
+    padding: 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: .2s;
+    border: 2px solid transparent;
+}
+
+.service:hover {
+    background: #153258;
+    transform: translateY(-3px);
+}
+
+.service.selected {
+    background: #1A5BFF;
+    border-color: #fff;
+    font-weight: bold;
+}
+
+
+/* ============================= */
+/* ===== 3. CALENDÁRIO ===== */
+/* ============================= */
+
+.calendar-box {
+    background: #0d1b2a;
+    padding: 25px;
+    border-radius: 16px;
+    max-width: 420px;
+    margin: 0 auto 25px;
+}
+
+.calendar-box input[type="date"] {
+    width: 95%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #112233;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Horários */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.times button {
+    padding: 12px;
+    border-radius: 50px;
+    background: #112233;
+    border: 2px solid transparent;
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.times button:hover {
+    background: #153258;
+    transform: scale(1.08);
+}
+
+.times button.selected {
+    background: #1A5BFF;
+    border-color: #fff;
+    font-weight: bold;
+}
+
+
+/* =========================== */
+/* ===== CONFIRMAR ===== */
+/* =========================== */
+
+.confirm-info {
+    background: #111;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    line-height: 1.7;
+}

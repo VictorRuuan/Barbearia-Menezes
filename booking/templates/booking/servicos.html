@@ -1,0 +1,21 @@
+{% extends 'booking/base.html' %}
+{% block content %}
+<section class="container">
+    <h2>Escolha o Serviço</h2>
+
+    <form action="{% url 'servicos' %}" method="post">
+        {% csrf_token %}
+
+        <div class="services">
+            <label class="service"><input type="radio" name="servico" value="Corte Simples — R$35" required> Corte Simples — R$ 35</label>
+            <label class="service"><input type="radio" name="servico" value="Degradê — R$45"> Degradê — R$ 45</label>
+            <label class="service"><input type="radio" name="servico" value="Barba — R$30"> Barba — R$ 30</label>
+            <label class="service"><input type="radio" name="servico" value="Sobrancelha — R$15"> Sobrancelha — R$ 15</label>
+            <label class="service"><input type="radio" name="servico" value="Corte + Barba — R$65"> Corte + Barba — R$ 65</label>
+            <label class="service"><input type="radio" name="servico" value="Pigmentação — R$50"> Pigmentação — R$ 50</label>
+        </div>
+
+        <button class="btn-primary" type="submit">Continuar</button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'booking/base.html' %}
+{% block content %}
+<section class="container">
+    <h2>Confirmar Agendamento</h2>
+
+    {% if saved %}
+        <p class="confirm-info">Agendamento salvo com sucesso! Obrigado.</p>
+        <p><strong>ID:</strong> {{ appt.id }}</p>
+        <a href="{% url 'index' %}" class="btn-secondary">Voltar ao Início</a>
+    {% else %}
+        <p class="confirm-info">
+            <strong>Nome:</strong> {{ nome }}<br>
+            <strong>Telefone:</strong> {{ telefone }}<br>
+            <strong>Serviço:</strong> {{ servico }}<br>
+            <strong>Data:</strong> {{ data }}<br>
+            <strong>Hora:</strong> {{ hora }}
+        </p>
+
+        <form action="{% url 'finalizar' %}" method="post">
+            {% csrf_token %}
+            <button class="btn-primary" type="submit">Finalizar</button>
+        </form>
+    {% endif %}
+</section>
+{% endblock %}
