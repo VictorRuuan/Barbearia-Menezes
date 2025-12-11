@@ -1,26 +1,24 @@
 {% extends 'booking/base.html' %}
-{% block content %}
-<section class="container">
-    <div class="calendar-box">
-    <h2>Data e Horário</h2>
+{% load static %}
 
-    <form action="{% url 'calendario' %}" method="post">
+{% block content %}
+<div class="container">
+    <h2>Escolha a Data e o Horário</h2>
+
+    <form method="POST">
         {% csrf_token %}
-        <label>Escolha a Data</label>
-        <input type="date" name="data" required>
+
+        <input type="date" name="data">
 
         <h3>Horários Disponíveis</h3>
-        <div class="times">
-            <label class="time-btn"><input type="radio" name="hora" value="09:00" required> 09:00</label>
-            <label class="time-btn"><input type="radio" name="hora" value="10:00"> 10:00</label>
-            <label class="time-btn"><input type="radio" name="hora" value="11:00"> 11:00</label>
-            <label class="time-btn"><input type="radio" name="hora" value="14:00"> 14:00</label>
-            <label class="time-btn"><input type="radio" name="hora" value="15:00"> 15:00</label>
-            <label class="time-btn"><input type="radio" name="hora" value="16:00"> 16:00</label>
-        </div>
 
-        <button class="btn-primary" type="submit">Continuar</button>
+        <div class="times">
+            {% for h in horarios %}
+            <button type="submit" name="hora" value="{{ h.hora }}">
+                {{ h.hora|time:"H:i" }}
+            </button>
+            {% endfor %}
+        </div>
     </form>
-    </div>
-</section>
+</div>
 {% endblock %}

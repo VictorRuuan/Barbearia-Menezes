@@ -1,0 +1,35 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="finalizado-container">
+
+    <div class="finalizado-icon">
+        <img src="{% static 'img/check.png' %}" alt="OK">
+    </div>
+
+    <h2 class="finalizado-titulo">Agendado com Sucesso!</h2>
+    <p class="finalizado-sub">Seu horário foi reservado</p>
+
+    <div class="finalizado-card">
+
+        <div class="linha-topo">
+            <strong class="servico-nome">{{ servico }}</strong>
+            <span class="servico-preco">R$ {{ preco }}</span>
+        </div>
+
+        <div class="linha"></div>
+
+        <p><strong>Cliente:</strong> {{ nome }}</p>
+        <p><strong>Data:</strong> {{ data }}</p>
+        <p><strong>Hora:</strong> {{ hora }}</p>
+
+    </div>
+
+    <div class="finalizado-btn-area">
+        <a href="{% url 'home' %}" class="btn-primary">⬅ Voltar ao início</a>
+        <a href="#" class="btn-secondary">Ver meus agendamentos</a>
+    </div>
+
+</div>
+{% endblock %}
