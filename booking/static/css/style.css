@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-        background: linear-gradient(180deg, #001f3f, #003d7a);
+    background: linear-gradient(180deg, #001f3f, #003d7a);
     color: #ffffff;
 }
 
@@ -40,7 +40,7 @@ body {
 .slogan {
     font-size: 15px;
     opacity: 0.9;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
 
 /* Botões Home */
@@ -48,7 +48,6 @@ body {
 .btn-group {
     display: flex;
     flex-direction: column;
-    gap: 12px;
     width: 100%;
     max-width: 300px;
 }
@@ -83,7 +82,6 @@ body {
     opacity: 0.8;
     margin-top: 25px;
 }
-
 
 /* =================================== */
 /* ===== PÁGINAS INTERNAS (GERAL) ===== */
@@ -172,7 +170,6 @@ body {
     margin-top: 18px;
 }
 
-
 /* ============================= */
 /* ===== 2. SERVIÇOS ===== */
 /* ============================= */
@@ -207,9 +204,8 @@ body {
     font-weight: bold;
 }
 
-
 /* ============================= */
-/* ===== 3. CALENDÁRIO ===== */
+/* ===== 3. CALENDÁRIO (NOVO) ===== */
 /* ============================= */
 
 .calendar-box {
@@ -218,6 +214,7 @@ body {
     border-radius: 16px;
     max-width: 420px;
     margin: 0 auto 25px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.3);
 }
 
 .calendar-box input[type="date"] {
@@ -229,37 +226,72 @@ body {
     color: #fff;
     font-size: 16px;
     margin-bottom: 20px;
+    outline: none;
 }
 
-/* Horários */
-
+/* Horários (nova versão) */
 .times {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
+    margin-top: 20px;
 }
 
-.times button {
+.horario-btn {
     padding: 12px;
-    border-radius: 50px;
     background: #112233;
+    border-radius: 12px;
     border: 2px solid transparent;
-    color: #fff;
-    transition: .2s;
+    color: #ffffff;
+    font-size: 15px;
     cursor: pointer;
+    text-align: center;
+    transition: .2s;
 }
 
-.times button:hover {
+.horario-btn:hover {
     background: #153258;
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
-.times button.selected {
-    background: #1A5BFF;
+.horario-btn input {
+    display: none;
+}
+
+.horario-btn input:checked + span,
+.horario-btn input:checked {
+    background: #1A5BFF !important;
+    color: white;
     border-color: #fff;
-    font-weight: bold;
 }
 
+/* quando não há horários */
+.indisponivel {
+    color: #e57373;
+    font-size: 15px;
+    margin-top: 10px;
+    grid-column: span 3;
+    text-align: center;
+}
+
+/* Botão continuar */
+.btn-continuar {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-continuar:hover {
+    background: #1d4ed8;
+}
 
 /* =========================== */
 /* ===== CONFIRMAR ===== */
@@ -274,9 +306,9 @@ body {
     line-height: 1.7;
 }
 
-/* ===========================
-   FINALIZADO – Tela de Sucesso
-   =========================== */
+/* =========================== */
+/* ===== FINALIZADO ===== */
+/* =========================== */
 
 .finalizado-container {
     max-width: 500px;
@@ -285,7 +317,6 @@ body {
     padding: 20px;
 }
 
-/* Ícone circular */
 .finalizado-icon {
     width: 120px;
     height: 120px;
@@ -302,7 +333,6 @@ body {
     width: 60px;
 }
 
-/* Títulos */
 .finalizado-titulo {
     color: white;
     font-size: 26px;
@@ -316,7 +346,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Card */
 .finalizado-card {
     background: #111827;
     padding: 20px;
@@ -342,18 +371,15 @@ body {
     font-size: 18px;
 }
 
-/* Linha divisória */
 .linha {
     border-bottom: 1px solid #334155;
     margin: 12px 0;
 }
 
-/* Área de botões */
 .finalizado-btn-area {
     margin-top: 30px;
 }
 
-/* Botão principal */
 .btn-primary {
     width: 100%;
     background: #2563eb;
@@ -372,7 +398,6 @@ body {
     transform: scale(1.02);
 }
 
-/* Botão secundário */
 .btn-secondary {
     width: 100%;
     border: 2px solid #3b82f6;

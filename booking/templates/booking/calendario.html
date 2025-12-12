@@ -8,17 +8,22 @@
     <form method="POST">
         {% csrf_token %}
 
-        <input type="date" name="data">
+        <input type="date" name="data" value="{{ data_escolhida }}" required>
 
         <h3>Horários Disponíveis</h3>
 
         <div class="times">
             {% for h in horarios %}
-            <button type="submit" name="hora" value="{{ h.hora }}">
-                {{ h.hora|time:"H:i" }}
-            </button>
+                <label class="horario-btn">
+                    <input type="radio" name="hora" value="{{ h.hora|time:'H:i' }}" required>
+                    <span>{{ h.hora|time:"H:i" }}</span>
+                </label>
+            {% empty %}
+                <p class="indisponivel">Nenhum horário disponível neste dia.</p>
             {% endfor %}
         </div>
+
+        <button type="submit" class="btn-continuar">Continuar</button>
     </form>
 </div>
 {% endblock %}

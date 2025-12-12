@@ -16,11 +16,11 @@ class Horario(models.Model):
 
 
 class Appointment(models.Model):
-    nome = models.CharField(max_length=120)
+    nome = models.CharField(max_length=100)
     telefone = models.CharField(max_length=20)
-    servico = models.CharField(max_length=120)
+    servicos = models.ManyToManyField(Servico)
     data = models.DateField()
     horario = models.TimeField()
 
     def __str__(self):
-        return f"{self.nome} - {self.data} {self.horario}"
+        return f"{self.nome} - {self.servico.nome}"

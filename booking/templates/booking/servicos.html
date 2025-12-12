@@ -3,7 +3,8 @@
 
 {% block content %}
 <div class="container">
-    <h2>Escolha o Serviço</h2>
+
+    <h2>Escolha seus serviços</h2>
 
     <form method="POST">
         {% csrf_token %}
@@ -11,13 +12,15 @@
         <div class="services">
             {% for s in servicos %}
             <label class="service">
-                <input type="radio" name="servico" value="{{ s.nome }}">
-                {{ s.nome }} — R$ {{ s.preco }}
+                <input type="checkbox" name="servicos" value="{{ s.id }}">
+                {{ s.nome }} — R${{ s.preco }}
             </label>
             {% endfor %}
         </div>
 
-        <button class="btn-primary">Continuar</button>
+        <button type="submit" class="btn-primary">Avançar</button>
+
     </form>
+
 </div>
 {% endblock %}
