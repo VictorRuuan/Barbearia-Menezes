@@ -80,21 +80,19 @@ def calendario(request):
 def confirmar(request):
     from .models import Servico
 
-    ids = request.session.get('servicos', [])
-    servicos_escolhidos = Servico.objects.filter(id__in=ids)
+    servicos_ids = request.session.get('servicos', [])
 
-    total = sum(s.preco for s in servicos_escolhidos)
+    servicos = Servico.objects.filter(id__in=servicos_ids)
 
     contexto = {
         'nome': request.session.get('nome'),
         'telefone': request.session.get('telefone'),
+        'servicos': servicos,
         'data': request.session.get('data'),
         'hora': request.session.get('hora'),
-        'servicos': servicos_escolhidos,
-        'total': total,
     }
-
     return render(request, 'booking/confirmar.html', contexto)
+
 # 5 - Finalizar
 def finalizar(request):
     from .models import Servico, Appointment
